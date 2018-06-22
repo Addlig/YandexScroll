@@ -10,8 +10,6 @@ public class BaseSteps {
 
     PageObject homePage;
 
-
-
     public BaseSteps(WebDriver driver) {
         this.homePage = new PageObject(driver);
     }
@@ -32,8 +30,39 @@ public class BaseSteps {
         assertTrue("Instagram не доступно",
                 homePage.isLinkInstagramEnabled());
     }
-   /** @Step
-    public scrollPage() {
-        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-    }**/
+
+
+
+    @Step
+    public void scrollPage() {
+        ((JavascriptExecutor) BaseTest.getDriver()).executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        System.out.println("Скролл Down");
+    }
+
+    @Step
+    public void scrollUp() {
+        ((JavascriptExecutor) BaseTest.getDriver()).executeScript("window.scrollBy(document.body.scrollHeight, 0)");
+        System.out.println("Скролл Up");
+    }
+
+
+    @Step
+    public void appleClick() {
+        homePage.appleCheckbox();
+        System.out.println("Выбран чекбокс");
+    }
+
+    @Step
+    public void appleDisplayed() {
+        assertTrue("Чекбокс Apple не доступно", homePage.AppleisDisplayed());
+        System.out.println("чекбокс отображается");
+
+    }
+
+    @Step
+    public void type() {
+        homePage.getTextAttribute();
+        System.out.println("Атрибут = " + homePage.getTextAttribute());
+    }
+
 }

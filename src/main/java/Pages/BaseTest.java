@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -14,6 +15,7 @@ public class BaseTest {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Driver/chromedriver.exe");
             driver = new ChromeDriver();
+
         }
         return driver;
     }

@@ -1,75 +1,51 @@
 package Pages;
 
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class PageObject {
 
     BaseTest basetest = new BaseTest();
+//*[@id="local-offers-first"]
+
     @FindBy(css = "[title='Instagram']")
     private WebElement LinkInstagram;
-    @FindBy(css = "input[id=city__front-input]")
-    private WebElement geoName;
-    @FindBy(css = "[class='b-autocomplete-item__reg']")
-    private WebElement linkTitle;
-    @FindBy(xpath = "//*[@class='b-autocomplete-item__reg'][contains(text(), 'Лондон')]")
-    private WebElement linkTitleLondon;
+    @FindBy(xpath = "//*[@id=\"local-offers-first\"]")
+    private WebElement Apple;
+    @FindBy(css= "input[type=\"checkbox\"][name=\"Производитель Apple\"]")
+    private WebElement Apple1;
+
 
 
     public PageObject(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-
     public boolean isLinkInstagramEnabled() {
         return LinkInstagram.isDisplayed();
     }
 
-
-    public boolean isGeoFieldDisplayed() {
-        return geoName.isDisplayed();
-    }
-
-    /**
-     * This lin is present
-     *
-     * @return
-     */
-
-
-    public boolean isLinkTitleLondonDisplayed() {
-        return linkTitleLondon.isDisplayed();
-    }
-
-    public String londonText() {
-        return linkTitle.getText();
-    }
-
-
-    public void geoFieldClear() {
-        geoName.clear();
-    }
-
-    public void printText(String text) {
-        geoName.sendKeys(text);
-    }
-
-
-    public void clickLink() {
-        linkTitle.click();
+    public boolean AppleisDisplayed() {
+        return  Apple.isEnabled() ;
 
     }
 
-    public void printText2(String text2) {
-        geoName.sendKeys(text2);
+    public void appleCheckbox() {
+        if (!Apple.isSelected()) {
+            Apple.click();
+        }
     }
 
-
-
-
+    public String getTextAttribute() {
+        return Apple.getAttribute("type");
+    }
 }
 
 
