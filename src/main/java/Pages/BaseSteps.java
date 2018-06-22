@@ -30,33 +30,30 @@ public class BaseSteps {
         assertTrue("Instagram не доступно",
                 homePage.isLinkInstagramEnabled());
     }
-
-
-
     @Step
     public void scrollPage() {
         ((JavascriptExecutor) BaseTest.getDriver()).executeScript("window.scrollBy(0,document.body.scrollHeight)");
         System.out.println("Скролл Down");
     }
-
     @Step
     public void scrollUp() {
         ((JavascriptExecutor) BaseTest.getDriver()).executeScript("window.scrollBy(document.body.scrollHeight, 0)");
         System.out.println("Скролл Up");
     }
-
-
     @Step
     public void appleClick() {
         homePage.appleCheckbox();
         System.out.println("Выбран чекбокс");
     }
-
     @Step
     public void appleDisplayed() {
         assertTrue("Чекбокс Apple не доступно", homePage.AppleisDisplayed());
         System.out.println("чекбокс отображается");
+    }
 
+    public void checkboxIsChecked() {
+        assertTrue("Чекбокс  не чекнут", homePage.AppleisSelected());
+        System.out.println("чекбокс чекнут");
     }
 
     @Step
@@ -64,5 +61,6 @@ public class BaseSteps {
         homePage.getTextAttribute();
         System.out.println("Атрибут = " + homePage.getTextAttribute());
     }
+
 
 }

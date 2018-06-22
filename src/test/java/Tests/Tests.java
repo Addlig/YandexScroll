@@ -27,12 +27,12 @@ public class Tests {
     @Test
     public void first() {
 
-
         homeSteps.LinkInstagramEnabled();
         homeSteps.scrollPage();
         homeSteps.scrollUp();
         homeSteps.appleDisplayed();
         homeSteps.appleClick();
+        homeSteps.checkboxIsChecked();
         homeSteps.type();
     }
 

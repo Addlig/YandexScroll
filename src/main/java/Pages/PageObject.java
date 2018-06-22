@@ -19,8 +19,7 @@ public class PageObject {
     private WebElement LinkInstagram;
     @FindBy(xpath = "//*[@id=\"local-offers-first\"]")
     private WebElement Apple;
-    @FindBy(css= "input[type=\"checkbox\"][name=\"Производитель Apple\"]")
-    private WebElement Apple1;
+
 
 
 
@@ -46,6 +45,12 @@ public class PageObject {
     public String getTextAttribute() {
         return Apple.getAttribute("type");
     }
+
+    public boolean AppleisSelected() {
+        return Apple.isSelected();
+
+        }
+
 }
 
 
