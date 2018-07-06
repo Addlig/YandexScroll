@@ -1,10 +1,14 @@
 package Pages;
 
+
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
+
+
 import static org.junit.Assert.assertTrue;
+
 
 public class BaseSteps {
 
@@ -27,8 +31,7 @@ public class BaseSteps {
     @Step
     public void LinkInstagramEnabled() {
         System.out.println("Instagram доступно");
-        assertTrue("Instagram не доступно",
-                homePage.isLinkInstagramEnabled());
+        assertTrue("Instagram не доступно", homePage.isLinkInstagramEnabled());
     }
     @Step
     public void scrollPage() {
@@ -47,7 +50,7 @@ public class BaseSteps {
     }
     @Step
     public void appleDisplayed() {
-        assertTrue("Чекбокс Apple не доступно", homePage.AppleisDisplayed());
+       assertTrue("Чекбокс Apple не доступно", homePage.AppleisDisplayed());
         System.out.println("чекбокс отображается");
     }
 
