@@ -10,6 +10,7 @@
     <artifactId>yandex</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
+
         <aspectj.version>1.8.9</aspectj.version>
         <allure.version>{latest-allure-version}</allure.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
