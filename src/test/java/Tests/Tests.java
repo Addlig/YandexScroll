@@ -27,13 +27,31 @@ public class Tests {
     @Test
     public void first() {
 
-        homeSteps.LinkInstagramEnabled();
-        homeSteps.scrollPage();
-        homeSteps.scrollUp();
-        homeSteps.appleDisplayed();
-        homeSteps.appleClick();
-        homeSteps.checkboxIsChecked();
-        homeSteps.type();
+        homeSteps.tvEnabled();
+        homeSteps.tvClick();
+        homeSteps.filmsDisplayed();
+        homeSteps.moveFilms();
+        homeSteps.filmsClick();
+        homeSteps.searchDisplayed();
+        homeSteps.searchClick();
+        homeSteps.sendKeys("Монгол");
+
+    }
+
+    @Test
+    public void two() {
+
+        homeSteps.tvEnabled();
+        homeSteps.JSClick();
+        homeSteps.filmsDisplayed();
+        homeSteps.moveFilms();
+        homeSteps.filmsClick();
+        homeSteps.searchDisplayed();
+        homeSteps.searchClick();
+        homeSteps.JSEnter();
+        homeSteps.poiskDisplayed();
+        homeSteps.poiskClick();
+
     }
 
 }

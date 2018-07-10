@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    private static WebDriver driver = null;
+    public static WebDriver driver = null;
 
 
     public static WebDriver getDriver() {
